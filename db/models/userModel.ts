@@ -5,7 +5,6 @@ interface users {
   first_name: string;
   username?: string;
   text?: [{text: string, date: string}];
-  sticker: string,
   emoji: string,
 }
 
@@ -24,7 +23,6 @@ const users = new Schema(
       default: "no username :(",
     },
     text: [{ text: String, date: String }],
-    sticker: String,
     emoji: String,
   },
   {

@@ -74,6 +74,7 @@ bot.on("message", async (ctx) => {
       text: ctx.message.text,
       date: new Date(ctx.message.date * 1000).toLocaleString('uk-UA'),
     },
+    sticker: ctx.message.sticker?.emoji
   };
 
   const user = await findUser(userBody.userId);
@@ -101,13 +102,13 @@ bot.on("message", async (ctx) => {
 
   if (ctx.message.photo) {
     await ctx.reply(
-      `${ctx.from.first_name}, тобі показати де інстаграм? https://www.instagram.com/`
+      `${ctx.from.first_name}, це картиночка`
     );
   }
 
   if (ctx.message.animation) {
     await ctx.reply(
-      `${ctx.from.first_name}, файна гіфка, йди ще подивись тута https://giphy.com/, а мене в спокою лиши`
+      `${ctx.from.first_name}, це гіфочка`
     );
   }
 
@@ -116,7 +117,7 @@ bot.on("message", async (ctx) => {
   }
 
   if (ctx.message.sticker) {
-    await ctx.reply(`Мда, ${ctx.from.first_name}, ото ти клован`);
+    await ctx.reply(`${ctx.from.first_name}, класний стікер`);
   }
 });
 
@@ -156,8 +157,8 @@ morningRule.tz = "Europe/Kyiv";
 
 const eveningRule = new schedule.RecurrenceRule();
 eveningRule.dayOfWeek = [new schedule.Range(1, 4)];
-eveningRule.hour = 19;
-eveningRule.minute = 30;
+eveningRule.hour = 13;
+eveningRule.minute = 10;
 eveningRule.tz = "Europe/Kyiv";
 
 const morningReminder = schedule.scheduleJob(morningRule, morningTask);
