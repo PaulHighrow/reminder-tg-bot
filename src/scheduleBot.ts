@@ -2,13 +2,13 @@
 
 import { Bot, InlineKeyboard } from "grammy";
 import schedule from "node-schedule";
-import { connectDB } from "./db/connect";
+import { connectDB } from "../db/connect";
 import {
   findUser,
   getUsers,
   saveUser,
   updateUser,
-} from "./db/services/services";
+} from "../db/services/services";
 
 //Create a new bot
 const bot = new Bot("6608942688:AAGVsxd6l5ASeP1fbNgV8ZoNcmMxX2_LRQg");
