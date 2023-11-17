@@ -118,6 +118,12 @@ bot.on("message", async (ctx) => {
 
   if (ctx.message.sticker) {
     await ctx.reply(`${ctx.from.first_name}, класний стікер`);
+
+    if (!user) {
+      await saveUser(userBody);
+    } else {
+      await updateUser(userBody.userId, { $push: { text: userBody.sticker } });
+    }
   }
 });
 
@@ -157,7 +163,7 @@ morningRule.tz = "Europe/Kyiv";
 
 const eveningRule = new schedule.RecurrenceRule();
 eveningRule.dayOfWeek = [new schedule.Range(1, 5)];
-eveningRule.hour = 13;
+eveningRule.hour = 16;
 eveningRule.minute = 10;
 eveningRule.tz = "Europe/Kyiv";
 
