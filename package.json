@@ -22,5 +22,8 @@
     "grammy": "^1.19.2",
     "mongoose": "^8.0.1",
     "node-schedule": "^2.1.1"
+  },
+  "engines" : { 
+    "node" : ">=14.20.1" 
   }
 }
