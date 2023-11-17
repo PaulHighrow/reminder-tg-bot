@@ -156,7 +156,7 @@ morningRule.minute = 30;
 morningRule.tz = "Europe/Kyiv";
 
 const eveningRule = new schedule.RecurrenceRule();
-eveningRule.dayOfWeek = [new schedule.Range(1, 4)];
+eveningRule.dayOfWeek = [new schedule.Range(1, 5)];
 eveningRule.hour = 13;
 eveningRule.minute = 10;
 eveningRule.tz = "Europe/Kyiv";
