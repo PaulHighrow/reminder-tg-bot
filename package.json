@@ -6,7 +6,6 @@
   "scripts": {
     "start": "ts-node ./scheduleBot.ts",
     "dev": "ts-node-dev ./scheduleBot.ts",
-    "build": "./scheduleBot.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sulihan Kyrylo",
@@ -23,9 +22,5 @@
     "grammy": "^1.19.2",
     "mongoose": "^8.0.1",
     "node-schedule": "^2.1.1"
-  },
-  "engines": {
-    "node": "17.0",
-    "npm": "8.1"
   }
 }
