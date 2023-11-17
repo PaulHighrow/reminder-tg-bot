@@ -72,9 +72,9 @@ bot.on("message", async (ctx) => {
     first_name: ctx.message.from.first_name,
     text: {
       text: ctx.message.text,
+      sticker: ctx.message.sticker?.emoji,
       date: new Date(ctx.message.date * 1000).toLocaleString('uk-UA'),
     },
-    sticker: ctx.message.sticker?.emoji
   };
 
   const user = await findUser(userBody.userId);
@@ -122,7 +122,7 @@ bot.on("message", async (ctx) => {
     if (!user) {
       await saveUser(userBody);
     } else {
-      await updateUser(userBody.userId, { $push: { text: userBody.sticker } });
+      await updateUser(userBody.userId, { $push: { text: userBody.text } });
     }
   }
 });

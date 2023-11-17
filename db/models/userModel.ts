@@ -22,8 +22,7 @@ const users = new Schema(
       type: String,
       default: "no username :(",
     },
-    text: [{ text: String, date: String }],
-    emoji: String,
+    text: [{ text: String, emoji: String, date: String }],
   },
   {
     versionKey: false,
