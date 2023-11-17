@@ -72,7 +72,7 @@ bot.on("message", async (ctx) => {
     first_name: ctx.message.from.first_name,
     text: {
       text: ctx.message.text,
-      date: new Date(ctx.message.date * 1000).toLocaleString(),
+      date: new Date(ctx.message.date * 1000).toLocaleString('uk-UA'),
     },
   };
 
